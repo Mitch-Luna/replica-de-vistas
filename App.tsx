@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image,TextInput } from 'react-native';
+import { StatusBar as ExpoSatatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View,Image,TextInput,SafeAreaView, StatusBar } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 import { Fontisto } from '@expo/vector-icons'; 
 import { Octicons } from '@expo/vector-icons';
@@ -13,6 +13,8 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
   return (
+  <SafeAreaView style={{flex:1}}>
+    <StatusBar backgroundColor={"rgb(19, 33, 50)"} />
     <View style={styles.container}>
       <View style={styles.iconosperfil}>
       <AntDesign style={styles.flecha} name="arrowleft" size={24} color="white" />
@@ -119,6 +121,7 @@ export default function App() {
         </View>
       
       </View>
+      </SafeAreaView>
   );
 }
 
@@ -133,7 +136,7 @@ const styles = StyleSheet.create({
   },
   iconosperfil:{
     flexDirection:'row',
-    marginTop:55,
+    marginTop:10,
     width:'100%',
     height:50,
   },
