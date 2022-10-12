@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
   contenedorparrafo:{
     marginTop:35,
     marginHorizontal:-215,
-    width:'89%',
+    width:'90%',
     height:76,   
 
   },
@@ -292,6 +292,7 @@ const styles = StyleSheet.create({
   },
 
   footerTwo: {
+    flex:1,
     backgroundColor: 'rgb(19, 33, 50)',
     width: '100%',
     height: 120,
@@ -302,16 +303,16 @@ const styles = StyleSheet.create({
   iconosfoot:{
     alignSelf:'center',
     marginTop:-55,
-    marginHorizontal:18,
+    marginHorizontal:22,
   },
   iconousuario:{
     marginTop:-55,
     alignSelf:'center',
-    marginHorizontal:35,
+    marginHorizontal:13,
   },
   rayita:{
     marginTop:2,
-    marginHorizontal:-137,
+    marginHorizontal:-120,
     backgroundColor:'blue',
     width:'8%',
     height:2,
