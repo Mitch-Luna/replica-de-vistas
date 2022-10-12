@@ -1,5 +1,5 @@
 import { StatusBar as ExpoSatatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image,TextInput,SafeAreaView, StatusBar } from 'react-native';
+import { StyleSheet, Text, View,Image,TextInput,SafeAreaView, StatusBar, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 import { Fontisto } from '@expo/vector-icons'; 
 import { Octicons } from '@expo/vector-icons';
@@ -32,7 +32,6 @@ export default function App() {
         style= {styles.input}
         placeholder='Add a Comment ...'
         />
-
         </View>
         <View style={styles.iconos}>
           <View style={styles.carita}>
@@ -45,6 +44,9 @@ export default function App() {
         <View style={styles.comentarios}>
           <Text style={styles.cantidad}>87 comments</Text>
         </View>
+        <ScrollView>
+        <View style={styles.containercomentarios} >
+        
         <View style={styles.primercomment}>
         <Image
          style={styles.primerperfil}
@@ -57,12 +59,36 @@ export default function App() {
         450 million from strategic investors acco rding to a press release sent to 
         Bitcoin.com Newa on February 7.</Text>
         </View>
-
+        </View>
+        <View style={styles.primercomment}>
+        <Image
+         style={styles.primerperfil}
+         source={{uri: 'https://4.bp.blogspot.com/-Vvsw2akWv3k/Vz2j0HbDHiI/AAAAAAAEHi4/c7n-PrW8TX8vDnvLPyv3r7Gt5sJoBit4gCLcB/s1600/rostros-bonitos-de-mujeres-desconocidas_06.jpg'}}
+        />
+        <Text style={styles.nombre}>David Green</Text>
+        <Text style={styles.fecha}>. 20 Apr. 2021</Text>
+        <View style={styles.contenedorparrafo}>
+        <Text style={styles.fecha}>😃😇Polygon has raised $
+        450 million from strategic investors acco rding to a press release sent to 
+        Bitcoin.com Newa on February 7.</Text>
+        </View>
         </View>
         <View style={styles.primercomment}>
         <Image
          style={styles.primerperfil}
          source={{uri: 'https://us.123rf.com/450wm/lightfieldstudios/lightfieldstudios1810/lightfieldstudios181004999/109190612-apuesto-hombre-sonriente-posando-en-blanco-con-los-brazos-cruzados-aislado-en-gris.jpg?ver=6'}}
+        />
+        <Text style={styles.nombre}>Michel Ganri</Text>
+        <Text style={styles.fecha}>. 20 Apr. 2021</Text>
+        <View style={styles.contenedorparrafo}>
+        <Text style={styles.fecha}>During the weekend, when bitcoin
+        rose to a two-week high, it wasz Gala that stole the show  ...</Text>
+        </View>
+        </View>
+        <View style={styles.primercomment}>
+        <Image
+         style={styles.primerperfil}
+         source={{uri: 'https://ciudadtrendy.mx/wp-content/uploads/2020/05/jung-kook-bts-1.jpg'}}
         />
         <Text style={styles.nombre}>Michel Ganri</Text>
         <Text style={styles.fecha}>. 20 Apr. 2021</Text>
@@ -95,31 +121,21 @@ export default function App() {
         rose to a two-week high, it wasz Gala that stole the show  ...</Text>
         </View>
         </View>
-        <View style={styles.primercomment}>
-        <Image
-         style={styles.primerperfil}
-         source={{uri: 'https://moda-hombre.com/wp-content/uploads/2020/05/Degradado-alto-Peinado-atr%C3%A1s-Barba.jpg'}}
-        />
-        <Text style={styles.nombre}>David Green</Text>
-        <Text style={styles.fecha}>. 20 Apr. 2021</Text>
-        <View style={styles.contenedorparrafo}>
-        <Text style={styles.fecha}>😃😇Polygon has raised $
-        450 million from strategic investors acco rding to a press release sent to 
-        Bitcoin.com Newa on February 7.</Text>
+        
         </View>
-        </View>
+        </ScrollView>
+        
         <View style={styles.footer}>
+          <View style={styles.footerTwo}>          
         <MaterialIcons style={styles.iconosfoot} name="house" size={37} color="rgb(140, 158, 179)" />
         <AntDesign style={styles.iconosfoot}name="minussquare" size={34} color="rgb(140, 158, 179)" />
         <FontAwesome5 style={styles.iconosfoot} name="book-open" size={34} color="rgb(140, 158, 179)" />
-        <FontAwesome style={styles.iconousuario} name="users" size={34} color='rgb(95, 196, 255)'/>
+        <FontAwesome style={styles.iconousuario} name="users" size={34} color='blue'/>
         <MaterialCommunityIcons style={styles.iconosfoot} name="bookmark-minus" size={34} color="rgb(140, 158, 179)" />
-        </View>
-        <View style={styles.rayita}>
-
+        <View style={styles.rayita}></View>
         </View>
         </View>
-      
+        </View>
       </View>
       </SafeAreaView>
   );
@@ -136,14 +152,13 @@ const styles = StyleSheet.create({
   },
   iconosperfil:{
     flexDirection:'row',
-    marginTop:10,
+    marginTop:-5,
     width:'100%',
     height:50,
   },
   flecha:{
     marginHorizontal:12,
     marginTop:10,
-   
   },
   campanita:{
     padding:12,
@@ -152,7 +167,6 @@ const styles = StyleSheet.create({
   },
   navegation:{
     padding:13,
-   
   },
   perfil:{
     marginTop:10,
@@ -163,11 +177,19 @@ const styles = StyleSheet.create({
     borderWidth:3,
   },
   subcontainer:{
-    marginTop:10,
-    backgroundColor: 'rgb(65, 81, 100)',
+    flex:1,
+    marginTop: 8,
+    backgroundColor:' rgb(38, 57, 80)',
     width:'100%',
-    height:'90%',
+    height:15,
     borderRadius:35,
+  },
+  containercomentarios:{
+    marginTop:13,
+    backgroundColor:' rgb(38, 57, 80)',
+    flex:1,
+    width:'100%',
+    height:700,
   },
   add:{
     marginHorizontal:15,
@@ -181,7 +203,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     width:'90%',
     height:60,
-    backgroundColor:'rgb(99, 112, 128)',
+    backgroundColor: 'rgb(99, 112, 128)',
     borderRadius:12,
     borderColor:'rgb(99, 112, 128)'
   },
@@ -216,7 +238,7 @@ const styles = StyleSheet.create({
   },
   comentarios:{
     marginHorizontal:15,
-    width:'44%',
+    width:'54%',
     height:34,
   },
   cantidad:{
@@ -230,7 +252,6 @@ const styles = StyleSheet.create({
     width:'94%',
     height:110,
     borderColor:'rgb(140, 158, 179)',
-    
     borderBottomWidth:1,
 
   },
@@ -258,33 +279,41 @@ const styles = StyleSheet.create({
     marginTop:35,
     marginHorizontal:-215,
     width:'89%',
-    height:76,
-    
+    height:76,   
 
   },
-  footer:{
-    alignItems:'flex-start',
+  footer:{ 
+    flex:1,
     flexDirection:'row',
-    marginTop:10,
+    marginTop:80,
     width:'100%',
-    height:70,
+    height:80,
     backgroundColor:'rgb(19, 33, 50)',
   },
+
+  footerTwo: {
+    backgroundColor: 'rgb(19, 33, 50)',
+    width: '100%',
+    height: 120,
+    flexDirection: 'row',
+    marginTop: -75,
+  },
+
   iconosfoot:{
-    marginTop:8,
-    marginHorizontal:20,
+    alignSelf:'center',
+    marginTop:-55,
+    marginHorizontal:18,
   },
   iconousuario:{
-    marginTop:8,
-    marginHorizontal:25,
+    marginTop:-55,
+    alignSelf:'center',
+    marginHorizontal:35,
   },
   rayita:{
-    marginTop:-70,
-    marginHorizontal:254,
-    backgroundColor:'rgb(95, 196, 255)',
-    width:'10%',
+    marginTop:2,
+    marginHorizontal:-137,
+    backgroundColor:'blue',
+    width:'8%',
     height:2,
-  }
-
-  
+  } 
 });
